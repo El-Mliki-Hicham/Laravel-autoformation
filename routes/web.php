@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\RequestExemple;
 use Illuminate\Http\Request;
 
 /*
@@ -28,31 +29,19 @@ use Illuminate\Http\Request;
 
 
 
+//route with view
 
-Route::get('/request', function () {
-    return view('request');
-});
-// ->middleware('test')
-
-
-
+// Route::get('/request', function () {
+//     return view('request');
+// });
 
 
 //route with request
  
-Route::any('/user', function (Request $request) {
-    $name = $request->input("name");
-    return $name;
-})->middleware("RequestExemple");
-
-
-
-
-
-
-
-
-
+// Route::any('/user', function (Request $request) {
+//     $name = $request->input("name");
+//     return $name;
+// });
 
 
 //route with 2 methode 
@@ -73,3 +62,37 @@ Route::any('/user', function (Request $request) {
 // Route::get('/person/{id}', function ($id) {
 //     return 'person id : '.$id;
 // });
+
+
+
+
+///////// GlobalMiddelware ////////
+
+// Middelware normal 
+
+Route::get('/request', function () {
+    return view('request');
+})->middleware('test');
+
+// Middelware declaration class
+
+Route::any('/user', function (Request $request) {
+    $name = $request->input("name");
+    return $name;
+})->middleware(RequestExemple::class);
+
+
+
+//middelware route group
+Route::middleware([EnsureTokenIsValid::class])->group(function () {
+    Route::get('/', function () {
+        //
+    });
+ 
+    Route::get('/profile', function () {
+        //
+    })->withoutMiddleware([EnsureTokenIsValid::class]);
+});
+
+
+
