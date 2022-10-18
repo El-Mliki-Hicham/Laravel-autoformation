@@ -66,7 +66,7 @@ use Illuminate\Http\Request;
 
 
 
-///////// GlobalMiddelware ////////
+///////// Registering Middleware////////
 
 // Middelware normal 
 
