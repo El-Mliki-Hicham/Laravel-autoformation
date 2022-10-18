@@ -24,7 +24,7 @@ Route::get('/index', function () {
 
 //controller route
  
-Route::get('/hello', [Controller::class, 'Hello']);
+Route::get('/hello', [Controller::class, 'Hello'])->name('pageHello');
 
 
 
@@ -47,7 +47,7 @@ Route::any('/user', function (Request $request) {
 });
 
 //redirect route
-Route::redirect('/here', '/there',301);
+Route::redirect('/her', 'hello');
 
 
 //route with id
