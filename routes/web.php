@@ -13,7 +13,9 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/request', function () {
+    return view('request');
+});
 
 // Basic Route
 Route::get('/index', function () {
@@ -39,6 +41,7 @@ Route::any('/', function () {
 //route with request
 use Illuminate\Http\Request;
  
-Route::get('/users', function (Request $request) {
-    
+Route::any('/user', function (Request $request) {
+    $name = $request->name;
+    return $name;
 });
