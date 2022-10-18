@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+// Basic Route
+Route::get('/index', function () {
+    return 'Hello World';
+});
+
+//controller route
+ 
+Route::get('/hello', [Controller::class, 'Hello']);
+
+
+
+//route with 2 methode 
+Route::match(['get', 'post'], '/', function () {
+});
+ 
+
+// route any methode
+Route::any('/', function () {
+});
+
+
+//route with request
+use Illuminate\Http\Request;
+ 
+Route::get('/users', function (Request $request) {
+    
 });
