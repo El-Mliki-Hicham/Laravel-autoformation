@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+
 use App\Http\Controllers\Controller;
 
 /*
@@ -13,9 +15,6 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/request', function () {
-    return view('request');
-});
 
 // Basic Route
 Route::get('/index', function () {
@@ -23,8 +22,36 @@ Route::get('/index', function () {
 });
 
 //controller route
+
+Route::get('/hello', [Controller::class, 'index']);
+
+
+
+
+Route::get('/request', function () {
+    return view('request');
+});
+
+
+
+
+
+
+//route with request
+use Illuminate\Http\Request;
  
-Route::get('/hello', [Controller::class, 'Hello'])->name('pageHello');
+Route::any('/user', function (Request $request) {
+    $name = $request->input("name");
+    return $name;
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -37,17 +64,9 @@ Route::match(['get', 'post'], '/', function () {
 Route::any('/', function () {
 });
 
-
-//route with request
-use Illuminate\Http\Request;
- 
-Route::any('/user', function (Request $request) {
-    $name = $request->name;
-    return $name;
-});
-
 //redirect route
 Route::redirect('/her', 'hello');
+
 
 
 //route with id

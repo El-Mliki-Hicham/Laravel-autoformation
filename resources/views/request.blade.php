@@ -1,5 +1,4 @@
-<form action="/user" method="get">
-    {{-- include a CSRF token field for protected and validate request  --}}
+<form action="/user" method="post">
     @csrf
     <input type="text" name="name">
     <button>click</button>
