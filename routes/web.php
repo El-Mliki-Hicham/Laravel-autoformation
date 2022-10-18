@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,20 +31,19 @@ use App\Http\Controllers\Controller;
 
 Route::get('/request', function () {
     return view('request');
-})->middleware('test');
-
+});
+// ->middleware('test')
 
 
 
 
 
 //route with request
-// use Illuminate\Http\Request;
  
-// Route::any('/user', function (Request $request) {
-//     $name = $request->input("name");
-//     return $name;
-// });
+Route::any('/user', function (Request $request) {
+    $name = $request->input("name");
+    return $name;
+})->middleware("RequestExemple");
 
 
 
