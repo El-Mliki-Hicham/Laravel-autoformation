@@ -45,3 +45,12 @@ Route::any('/user', function (Request $request) {
     $name = $request->name;
     return $name;
 });
+
+//redirect route
+Route::redirect('/here', '/there',301);
+
+
+//route with id
+Route::get('/person/{id}', function ($id) {
+    return 'person id : '.$id;
+});
