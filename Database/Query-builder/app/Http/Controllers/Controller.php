@@ -13,8 +13,8 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function index()
     {
-        $users = DB::table('contact')->get();
+        $user = DB::table('contacts')->get();
  
-        return view('user.index',compact('users'));
+        return view('index',compact('user'));
     }
 }
