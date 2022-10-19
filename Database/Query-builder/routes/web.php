@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::any("/index",[Controller::class,"index"]);
+Route::any("person/{id}",[Controller::class,"FindId"]);

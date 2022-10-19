@@ -17,4 +17,10 @@ class Controller extends BaseController
  
         return view('index',compact('user'));
     }
+    public function FindId($id)
+    {
+        $user = DB::table('contacts')->where("id",$id)->get();
+ 
+        return view('userId',compact('user'));
+    }
 }
