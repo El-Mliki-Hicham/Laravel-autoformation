@@ -79,4 +79,5 @@ class Controller extends BaseController
             ->get();
             return view('index',compact('user'));
     }
+    //cross join
 }
