@@ -22,3 +22,14 @@ Id = {{$age=1}}
     <h2>age is empty</h2>
 @endempty
 
+
+{{-- loop Foreach --}}
+
+@php
+$user = array("hicham","adnan","nada")    
+@endphp
+
+@foreach ($user  as $value)
+    <p>User name id : {{ $value }}</p>
+@endforeach
+ 
