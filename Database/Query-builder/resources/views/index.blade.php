@@ -1,5 +1,5 @@
-@foreach ($user as $item)
+{{-- @foreach ($user as $item) --}}
 
-<h1>{{$item->Nom}}</h1>
+<h1>{{$user->Nom}}</h1>
     
 @endforeach

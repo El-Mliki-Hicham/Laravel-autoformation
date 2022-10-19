@@ -20,7 +20,12 @@ class Controller extends BaseController
     public function FindId($id)
     {
         $user = DB::table('contacts')->where("id",$id)->get();
- 
+        
         return view('userId',compact('user'));
+    }
+    public function FindName()
+    {
+        $user = DB::table('contacts')->first();
+        return $user->Nom;
     }
 }
