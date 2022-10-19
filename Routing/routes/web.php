@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\RequestExemple;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,59 +19,80 @@ use App\Http\Controllers\Controller;
 */
 
 // Basic Route
-Route::get('/index', function () {
-    return 'Hello World';
-});
+// Route::get('/index', function () {
+//     return 'Hello World';
+// });
 
 //controller route
 
-Route::get('/hello', [Controller::class, 'index']);
+// Route::get('/hello', [Controller::class, 'index']);
 
 
 
+//route with view
 
-Route::get('/request', function () {
-    return view('request');
-});
-
-
-
-
+// Route::get('/request', function () {
+//     return view('request');
+// });
 
 
 //route with request
-use Illuminate\Http\Request;
  
-Route::any('/user', function (Request $request) {
-    $name = $request->input("name");
-    return $name;
-});
-
-
-
-
-
-
-
-
-
+// Route::any('/user', function (Request $request) {
+//     $name = $request->input("name");
+//     return $name;
+// });
 
 
 //route with 2 methode 
-Route::match(['get', 'post'], '/', function () {
-});
+// Route::match(['get', 'post'], '/', function () {
+// });
  
 
 // route any methode
-Route::any('/', function () {
-});
+// Route::any('/', function () {
+// });
 
 //redirect route
-Route::redirect('/her', 'hello');
+// Route::redirect('/her', 'hello');
 
 
 
 //route with id
-Route::get('/person/{id}', function ($id) {
-    return 'person id : '.$id;
+// Route::get('/person/{id}', function ($id) {
+//     return 'person id : '.$id;
+// });
+
+
+
+
+///////// Registering Middleware////////
+
+// Middelware normal 
+
+Route::get('/request', function () {
+    return view('request');
+})->middleware('test');
+
+// Middelware declaration class
+
+Route::any('/user', function (Request $request) {
+    $name = $request->input("name");
+    return $name;
+})->middleware(RequestExemple::class);
+
+
+
+//middelware route group
+Route::middleware([EnsureTokenIsValid::class])->group(function () {
+    Route::get('/', function () {
+        //
+    });
+ 
+    Route::get('/profile', function () {
+        //
+    })->withoutMiddleware([EnsureTokenIsValid::class]);
 });
+
+
+
