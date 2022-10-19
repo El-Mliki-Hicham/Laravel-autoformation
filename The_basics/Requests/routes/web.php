@@ -25,10 +25,13 @@ Route::get('/index', function () {
 Route::any("Request",[TestController::class,"index"]);
 
 
+
+
 // Request with id
 Route::get('/personForm', function () {
     return view('personForm');
 });
+
 Route::any("Person/{id}",[TestController::class,"findId"]);
 
 
