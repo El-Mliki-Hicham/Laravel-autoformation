@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TestController;
+use Illuminate\Http\Request;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,10 @@ Route::get('/personForm', function () {
     return view('personForm');
 });
 Route::any("Person/{id}",[TestController::class,"findId"]);
+
+
+
+// Request all
+Route::any("/route",function(Request $request){
+    return $input = $request->input();
+});
