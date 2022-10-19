@@ -28,4 +28,21 @@ class Controller extends BaseController
         $user = DB::table('contacts')->first();
         return $user->Nom;
     }
+
+    public function orderBy()
+    {   
+        $user = DB::table('contacts')->orderBy("Nom")->get();
+ 
+        return view('index',compact('user'));
+    }
+    public function select()
+    {
+        $user = DB::table('contacts')
+        ->select('Nom','id')
+        ->get();
+ 
+        return view('index',compact('user'));
+    }
+   
+    
 }

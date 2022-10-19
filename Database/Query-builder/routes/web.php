@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::any("/index",[Controller::class,"index"]);
 Route::any("/findName",[Controller::class,"FindName"]);
 Route::any("person/{id}",[Controller::class,"FindId"]);
+Route::any("/orderBy",[Controller::class,"orderBy"]);
+Route::any("/select",[Controller::class,"select"]);

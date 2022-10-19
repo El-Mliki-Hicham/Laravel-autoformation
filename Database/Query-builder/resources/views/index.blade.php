@@ -1,4 +1,5 @@
-{{-- @foreach ($user as $item) --}}
+{{$user}}
+@foreach ($user as $user)
 
 <h1>{{$user->Nom}}</h1>
     

@@ -1,18 +1,24 @@
-@include('Title')
 {{-- if and else --}}
 
-Id = {{$age=1}}
+@include('Title')
 
-@if($age == 1)
+
+
+Id = {{ $age= null }}
+
+
+{{-- @if($age == 1)
     <h2>Hello hicham</h2>
     
 @else
 <h2>null</h2>
-@endif
+@endif --}}
+
 
 
 {{-- isset and empty --}}
 
+{{-- 
 @isset($age)
 
 <h2>age is {{$age}}</h2>
@@ -20,16 +26,23 @@ Id = {{$age=1}}
  
 @empty($age)
     <h2>age is empty</h2>
-@endempty
+@endempty --}}
 
 
 {{-- loop Foreach --}}
 
 @php
-$user = array("hicham","adnan","nada")    
+$user = array("hicham","adnan","nada")   
+
+
+
 @endphp
 
+
+
+
+
 @foreach ($user  as $value)
-    <p>User name id : {{ $value }}</p>
+    <p>User name     : {{ strtoupper( $value) }}</p>
 @endforeach
  
