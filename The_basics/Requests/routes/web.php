@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/index', function () {
+    return view('form');
 });
 
-Route::get("/index",[TestController::class,"index"]);
+Route::any("Request",[TestController::class,"index"]);
