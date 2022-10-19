@@ -15,8 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Retrieving An Input Value
+
+// Request form 
 Route::get('/index', function () {
     return view('form');
 });
-
 Route::any("Request",[TestController::class,"index"]);
+
+
+// Request with id
+Route::get('/personForm', function () {
+    return view('personForm');
+});
+Route::any("Person/{id}",[TestController::class,"findId"]);
