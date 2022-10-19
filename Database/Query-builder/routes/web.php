@@ -18,8 +18,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Database Get Data 
 Route::any("/index",[Controller::class,"index"]);
+
+
+//route DB select first row 
 Route::any("/findName",[Controller::class,"FindName"]);
+
+//route DB where
 Route::any("person/{id}",[Controller::class,"FindId"]);
+
+//route DB orderBy
 Route::any("/orderBy",[Controller::class,"orderBy"]);
+
+//route select from DB
 Route::any("/select",[Controller::class,"select"]);
+
+// route inner Joint
+Route::any("/innerJoint",[Controller::class,"join"]);
+
+//route left join
+Route::any("/LeftJoin",[Controller::class,"LeftJoin"]);
+
+//route right join
+Route::any("/RightJoin",[Controller::class,"RightJoin"]);
