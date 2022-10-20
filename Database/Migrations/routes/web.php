@@ -18,10 +18,12 @@ Route::get('/', function () {
 });
 
 
-// create new  migration : php artisan make:migration {name}
+// create new  migration table :php artisan make:migration create_flights_table
 
 // seed migration : php artisan migrate 
 
 //show all  migration : php artisan migrate:status
 
-//show detail php artisan migrate --pretend
+//show detail migration :php artisan migrate --pretend
+
+//Refresh tables :php artisan migrate:refresh
