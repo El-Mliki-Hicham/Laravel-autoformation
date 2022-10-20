@@ -13,11 +13,19 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function index()
     {
+
 //Database Get 
         $user = DB::table('contacts')->get();
  
         return view('index',compact('user'));
     }
+
+
+
+
+
+
+
 
 // Database where  
     public function FindId($id)
@@ -27,12 +35,22 @@ class Controller extends BaseController
         return view('userId',compact('user'));
     }
 
+
+
+
+
+
+
 //Database select first row 
     public function FindName()
     {
         $user = DB::table('contacts')->first();
         return $user->Nom;
     }
+
+
+
+
 
 //Database OrderBy
     public function orderBy()
@@ -41,6 +59,9 @@ class Controller extends BaseController
  
         return view('index',compact('user'));
     }
+
+
+
 
 // Database select
     public function select()
@@ -53,14 +74,23 @@ class Controller extends BaseController
     }
    
 
+
+
+    
+
 // Database inner join
     public function join(){
-        $users = DB::table('contactperson')
-            ->join('telephone', 'contactperson.id', '=', 'telephone.id_phone')
+        $users = DB::table('telephone')
+            ->join('contactperson', 'contactperson.id', '=', 'telephone.id_phone')
             ->select('*')
             ->get();
             return view('join',compact('users'));
     }
+
+
+
+// //// STOP
+
 
 // Database left join
     public function LeftJoin(){

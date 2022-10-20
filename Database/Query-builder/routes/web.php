@@ -22,11 +22,23 @@ Route::get('/', function () {
 Route::any("/index",[Controller::class,"index"]);
 
 
-//route DB select first row 
-Route::any("/findName",[Controller::class,"FindName"]);
+
+
+
 
 //route DB where
 Route::any("person/{id}",[Controller::class,"FindId"]);
+
+
+
+
+
+
+
+//route DB select first row 
+Route::any("/findName",[Controller::class,"FindName"]);
+
+
 
 //route DB orderBy
 Route::any("/orderBy",[Controller::class,"orderBy"]);

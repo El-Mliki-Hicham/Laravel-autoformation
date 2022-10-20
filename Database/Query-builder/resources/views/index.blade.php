@@ -1,6 +1,9 @@
 {{$user}}
-@foreach ($user as $user)
 
-<h1>{{$user->Nom}}</h1>
+
+@foreach ($user as $value)
+
+<h1>{{$value->Nom}}</h1>
+<h1>{{$value->Email}}</h1>
     
 @endforeach

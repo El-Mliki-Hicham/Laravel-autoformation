@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// installation composer  require doctrine/dbal   
 // create new  migration table :php artisan make:migration create_flights_table
 
 // seed migration : php artisan migrate 
@@ -27,3 +27,5 @@ Route::get('/', function () {
 //show detail migration :php artisan migrate --pretend
 
 //Refresh tables :php artisan migrate:refresh
+
+//rename col in table db : php artisan make:migration col_change_name --table=tableName
