@@ -29,3 +29,11 @@ Route::get('/', function () {
 //Refresh tables :php artisan migrate:refresh
 
 //rename col in table db : php artisan make:migration col_change_name --table=tableName
+// $table->renameColumn('hh', 'phone');
+
+
+//remove col in table db : php artisan make:migration col_remove_name --table=tableName
+// $table->dropColumn('phone');
+
+//add col in table db : php artisan make:migration col_remove_name --table=tableName
+// $table->string('phone')->unique();
