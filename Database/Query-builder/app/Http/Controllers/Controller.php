@@ -55,29 +55,29 @@ class Controller extends BaseController
 
 // Database inner join
     public function join(){
-        $users = DB::table('users')
-            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+        $users = DB::table('contactperson')
+            ->join('telephone', 'contactperson.id', '=', 'telephone.id_phone')
             ->select('*')
             ->get();
-            return view('index',compact('user'));
+            return view('join',compact('users'));
     }
 
 // Database left join
     public function LeftJoin(){
-        $users = DB::table('users')
-            ->leftJoin('contacts', 'users.id', '=', 'contacts.user_id')
+        $users = DB::table('contactperson')
+            ->leftJoin('telephone', 'contactperson.id', '=', 'telephone.id_phone')
             ->select('*')
             ->get();
-            return view('index',compact('user'));
+            return view('join',compact('users'));
     }
 
 // Database right join
     public function RightJoin(){
-        $users = DB::table('users')
-            ->rightJoin('contacts', 'users.id', '=', 'contacts.user_id')
+        $users = DB::table('contactperson')
+            ->rightJoin('telephone', 'contactperson.id', '=', 'telephone.id_phone')
             ->select('*')
             ->get();
-            return view('index',compact('user'));
+            return view('join',compact('users'));
     }
     //cross join
 }

@@ -75,10 +75,20 @@ return new class extends Migration
     {
         Schema::create('Telephone', function (Blueprint $table) {
             
-            $table->increments('id_tele');
-            $table->string('Tele')->nullable();
+            $table->increments('id_phone');
+            $table->string('Phone')->nullable();
              
                 });
+
+                Schema::create('ContactPerson', function (Blueprint $table) {
+                        $table->increments("id");
+                        $table->string('Nom')->nullable();
+                        $table->unsignedInteger('Phone')->nullable();
+                        $table->foreign('Phone')
+                        ->references('id_phone')
+                        ->on('Telephone')
+                        ->onDelete('cascade');
+                    });
     }
 
     /**

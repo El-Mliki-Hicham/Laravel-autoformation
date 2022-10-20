@@ -35,7 +35,7 @@ Route::any("/orderBy",[Controller::class,"orderBy"]);
 Route::any("/select",[Controller::class,"select"]);
 
 // route inner Joint
-Route::any("/innerJoint",[Controller::class,"join"]);
+Route::any("/innerJoin",[Controller::class,"join"]);
 
 //route left join
 Route::any("/LeftJoin",[Controller::class,"LeftJoin"]);
