@@ -12,6 +12,8 @@ class PromotionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  one to one
     public function hasOne()
     {
         $data = Promotion::find(1)->HasOneStudent ;
@@ -19,6 +21,7 @@ class PromotionController extends Controller
     }
 
 
+    //  one to many
     public function hasMany()
     {
         $data = Promotion::find(1)->HasManyStudent ;
