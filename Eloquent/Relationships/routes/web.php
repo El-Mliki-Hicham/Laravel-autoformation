@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PromotionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+route::get('hasOne',[PromotionController::class,"hasOne"]);
+route::get('hasMany',[PromotionController::class,"hasMany"]);

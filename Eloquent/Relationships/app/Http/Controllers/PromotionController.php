@@ -12,74 +12,18 @@ class PromotionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function hasOne()
     {
-        //
+        $data = Promotion::find(1)->HasOneStudent ;
+        return $data  ;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function hasMany()
     {
-        //
+        $data = Promotion::find(1)->HasManyStudent ;
+        return $data  ;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Promotion  $promotion
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Promotion $promotion)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Promotion  $promotion
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Promotion $promotion)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Promotion  $promotion
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Promotion $promotion)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Promotion  $promotion
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Promotion $promotion)
-    {
-        //
-    }
 }
