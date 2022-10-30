@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Promotion;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
@@ -26,6 +27,12 @@ class PromotionController extends Controller
     {
         $data = Promotion::find(1)->HasManyStudent ;
         return $data  ;
+    }
+    public function belongsTo()
+    {
+        $data = Student::find(2);
+
+        return $data->promotion .$data  ;
     }
 
 

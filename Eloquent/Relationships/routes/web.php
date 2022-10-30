@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// One to one
 route::get('hasOne',[PromotionController::class,"hasOne"]);
+//One to many
 route::get('hasMany',[PromotionController::class,"hasMany"]);
+//BelongsTo
+route::get('belongsTo',[PromotionController::class,"belongsTo"]);
