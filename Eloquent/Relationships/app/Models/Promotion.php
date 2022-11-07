@@ -15,6 +15,10 @@ class Promotion extends Model
   function HasOneStudent(){
     return $this->hasOne(Student::class);
   }
+
+
+
+
   function HasManyStudent(){
     return $this->hasMany(Student::class);
   }

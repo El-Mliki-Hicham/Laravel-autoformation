@@ -28,11 +28,19 @@ class PromotionController extends Controller
         $data = Promotion::find(1)->HasManyStudent ;
         return $data  ;
     }
+
+
+
+
+
+
+
+    // belongsTo
     public function belongsTo()
     {
         $data = Student::find(2);
-
-        return $data->promotion .$data  ;
+        $data->promotion;
+        return $data ;
     }
 
 
