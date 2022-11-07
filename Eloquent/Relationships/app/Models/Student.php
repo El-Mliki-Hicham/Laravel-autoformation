@@ -13,5 +13,9 @@ class Student extends Model
     }
 
 
+    public function Briefs()
+    {
+        return $this->belongsToMany(Briefs::class);
+    }
 }
 

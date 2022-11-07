@@ -10,8 +10,8 @@ class Briefs extends Model
 {
     use HasFactory;
 
-    public function Promotion()
+    public function Student()
 {
-    return $this->belongsToMany(Promotion::class);
+    return $this->belongsToMany(Student::class);
 }
 }

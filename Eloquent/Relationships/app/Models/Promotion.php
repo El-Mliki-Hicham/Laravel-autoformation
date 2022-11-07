@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Promotion extends Model
 {
+
     use HasFactory;
 
 //  protected $fillable
@@ -24,8 +25,5 @@ class Promotion extends Model
     return $this->hasMany(Student::class);
   }
 
-  public function Briefs()
-{
-    return $this->belongsToMany(Briefs::class);
-}
+
 }

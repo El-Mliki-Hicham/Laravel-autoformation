@@ -44,11 +44,14 @@ class PromotionController extends Controller
 
     }
 
+
+    
+
     public function belongsToMany(){
 
-        $user = Promotion::find(2);
+        $user = Student::find(1);
 
-            dd($user->Briefs);
+            return $user->Briefs;
     }
 
 
