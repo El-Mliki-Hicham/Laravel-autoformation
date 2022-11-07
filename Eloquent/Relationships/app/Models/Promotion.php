@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Briefs;
 use App\Models\Student;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,4 +23,9 @@ class Promotion extends Model
   function HasManyStudent(){
     return $this->hasMany(Student::class);
   }
+
+  public function Briefs()
+{
+    return $this->belongsToMany(Briefs::class);
+}
 }
