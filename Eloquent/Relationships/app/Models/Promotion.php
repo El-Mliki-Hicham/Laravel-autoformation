@@ -21,6 +21,10 @@ class Promotion extends Model
 
 
 
+
+
+  
+
   function HasManyStudent(){
     return $this->hasMany(Student::class);
   }
