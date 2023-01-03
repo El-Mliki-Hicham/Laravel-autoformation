@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Termwind\Components\Dd;
 
 class TaskController extends Controller
 {
@@ -25,15 +26,16 @@ class TaskController extends Controller
             return view(RouteServiceProvider::HOME,compact('task'));
         }
         public function create(){
-            $this->authorize("isAdmin");
+            // $this->authorize("isAdmin");
         // Gate::allows("isAdmin")? AccessResponse::allow() : abort(403);
 
         return view('pages.create');
 }
     function store(Request $request){
-
+// dd( auth()->user()->id);
     $task = new Task();
     $task->Task = $request->Task;
+    $task->users_id = auth()->user()->id;
     $task->save();
     if( $task->save()){
     return redirect('task');

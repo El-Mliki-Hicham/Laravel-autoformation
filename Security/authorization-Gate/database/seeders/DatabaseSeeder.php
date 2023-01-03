@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -36,6 +38,20 @@ class DatabaseSeeder extends Seeder
             "role" => "admin",
             "password" => "adminadmin",
 
+        ]);
+
+        $user = User::all();
+        \App\Models\Task::factory()->create([
+            'Task' => 'tach 1',
+            'users_id' =>1 ,
+        ]);
+        \App\Models\Task::factory()->create([
+            'Task' => 'tache 2',
+            'users_id' =>2 ,
+        ]);
+        \App\Models\Task::factory()->create([
+            'Task' => 'tach 2',
+            'users_id' =>3 ,
         ]);
     }
 }

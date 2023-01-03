@@ -12,6 +12,7 @@ class Task extends Model
     protected $table ="tasks";
     public $timestamps= false;
     protected $fillable = [
-        "Task"
+        "Task",
+        "users_id",
     ];
 }
