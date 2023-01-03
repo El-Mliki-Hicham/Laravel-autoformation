@@ -20,10 +20,10 @@
                 </div>
 
                 <table class="table">
-                    @can('isAdmin')
-
                     <a class="btn btn-primary" href={{route("task.create")}}>ajouter</a>
-                    @endcan
+                    {{-- @can('isAdmin')
+
+                    @endcan --}}
                     <thead>
                         <tr>
                             <th>id</th>
