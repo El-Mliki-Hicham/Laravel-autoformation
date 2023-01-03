@@ -18,6 +18,27 @@
                     {{ __("You have User Access") }}
                     @endcan
                 </div>
+
+                <table class="table">
+                    @can('isAdmin')
+
+                    <a class="btn btn-primary" href={{route("task.create")}}>ajouter</a>
+                    @endcan
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($task as $item)
+                        <tr>
+                            <td>{{$item->id}} </td>
+                            <td>{{$item->Task}} </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
