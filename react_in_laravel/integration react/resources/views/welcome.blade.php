@@ -6,6 +6,9 @@
 
         <title>Laravel</title>
 
+
+<div id=”example”></div>
+<script src="{{ asset('/js/app.js') }}"></script>
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
