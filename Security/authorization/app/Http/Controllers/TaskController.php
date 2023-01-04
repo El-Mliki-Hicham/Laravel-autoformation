@@ -41,4 +41,8 @@ class TaskController extends Controller
     return redirect('task');
     }
     }
+     function destroy($id){
+         $task=Task::find($id)->delete();
+         redirect()->back();
+     }
 }

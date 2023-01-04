@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string("Task")->nullable();
-            $table->unsignedInteger("users_id");
-            $table->foreign("users_id")->references("id")->on("users");
+            // $table->unsignedInteger("users_id");
+            $table->foreignId("users_id")
+            ->constrained("users");
             $table->timestamps();
         });
     }
