@@ -16,12 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get("/login",[LoginController::class,"login"]);
 Route::post("/login",[LoginController::class,"loginStore"])->name('login.login');
-Route::get("/index",[LoginController::class,"index"]);
+Route::get("/",[LoginController::class,"index"]);
 Route::get("/register",[LoginController::class,"create"]);
-Route::post("/store",[LoginController::class,"store"])->name("login.store");
+Route::post("/store",[LoginController::class,"store"])->name("register.store");

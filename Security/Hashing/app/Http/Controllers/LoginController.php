@@ -55,7 +55,7 @@ class LoginController extends Controller
     {
         $user = User::where('email',$request->email)->get();
         if(Crypt::decrypt($user[0]->password)==$request->password){
-        return redirect('index')->with('message',"success");
+        return redirect('/')->with('success',"success");
     }
     else{
         dd('error');

@@ -1,6 +1,6 @@
 <h1>Encrypted password</h1>
 
-<form action="{{route('login.store')}}" method="POST">
+<form action="{{route('register.store')}}" method="POST">
     @csrf
    name <input type="text" name="name"><br>
    email <input type="text" name="email"><br>
