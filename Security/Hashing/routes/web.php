@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get("/hashing",[TestController::class,"hashing"]);
+Route::post("hashing",[TestController::class,"hashing"]);
